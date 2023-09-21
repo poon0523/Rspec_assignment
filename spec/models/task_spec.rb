@@ -24,7 +24,6 @@ RSpec.describe Task, type: :model do
       task = Task.new(title: "test", description: "test", status: :todo, deadline: Date.yesterday)
       expect(task).to be_invalid
       expect(task.errors.full_messages).to eq ["Deadline must start from today."]
-      # expect(task.errors.full_messages).to eq["must start from today."]
     end
 
     it "完了期限が今日の日付の場合、タスクのバリデーションが有効であること" do
